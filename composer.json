@@ -1,0 +1,17 @@
+{
+    "name": "campaignchain/location-website",
+    "description": "Simple module that connects a Website and to define its pages as CampaignChain Locations.",
+    "keywords": ["website"],
+    "type": "campaignchain-location",
+    "homepage": "http://www.campaignchain.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Sandro Groganz",
+            "email": "sandro@campaignchain.com"
+        }
+    ],
+    "require": {
+        "campaignchain/channel-website": "dev-master"
+    }
+}

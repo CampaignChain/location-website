@@ -1,0 +1,4 @@
+services:
+    campaignchain.location.website.job.cta:
+        class: CampaignChain\Location\WebsiteBundle\Job\CTAJob
+        arguments: [ @doctrine.orm.entity_manager, @service_container ]
