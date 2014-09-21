@@ -13,5 +13,8 @@
     ],
     "require": {
         "campaignchain/channel-website": "dev-master"
+    },
+    "autoload": {
+        "psr-4": { "CampaignChain\\Location\\WebsiteBundle\\": "" }
     }
 }
