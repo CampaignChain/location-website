@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "campaignchain/channel-website": "dev-1.0.0-alpha.2"
+        "campaignchain/channel-website": "1.0.0-alpha.2"
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Location\\WebsiteBundle\\": "" }
