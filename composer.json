@@ -16,5 +16,14 @@
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Location\\WebsiteBundle\\": "" }
+    },
+    "extra": {
+        "campaignchain": {
+            "kernel": {
+                "classes": [
+                    "CampaignChain\\Location\\WebsiteBundle\\CampaignChainLocationWebsiteBundle"
+                ]
+            }
+        }
     }
 }
