@@ -12,12 +12,15 @@
         }
     ],
     "require": {
-        "campaignchain/channel-website": "1.0.0-alpha.4"
+        "campaignchain/channel-website": "1.0.0@beta - 1.0.0@rc"
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Location\\WebsiteBundle\\": "" }
     },
     "extra": {
+        "branch-alias": {
+            "dev-1.0.0-beta.1": "1.0.0-dev"
+        },
         "campaignchain": {
             "kernel": {
                 "classes": [
