@@ -12,11 +12,7 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
         "campaignchain/channel-website": "dev-master"
-=======
-        "campaignchain/channel-website": "dev-master"
->>>>>>> 1.0.0-beta.1
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Location\\WebsiteBundle\\": "" }
