@@ -12,10 +12,10 @@ namespace CampaignChain\Location\WebsiteBundle\Job;
 
 use Doctrine\ORM\EntityManager;
 use CampaignChain\CoreBundle\Entity\Location;
-use CampaignChain\CoreBundle\Job\CTAJobInterface;
+use CampaignChain\CoreBundle\Job\JobCTAInterface;
 use CampaignChain\CoreBundle\Util\ParserUtil;
 
-class CTAJob implements CTAJobInterface
+class CTAJob implements JobCTAInterface
 {
     protected $em;
     protected $container;
