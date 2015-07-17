@@ -1,7 +1,7 @@
 {
     "name": "campaignchain/location-website",
     "description": "Simple module that connects a Website and to define its pages as CampaignChain Locations.",
-    "keywords": ["website"],
+    "keywords": ["website", "campaignchain"],
     "type": "campaignchain-location",
     "homepage": "http://www.campaignchain.com",
     "license": "Apache-2.0",
