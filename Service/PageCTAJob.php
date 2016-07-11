@@ -8,14 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CampaignChain\Location\WebsiteBundle\Job;
+namespace CampaignChain\Location\WebsiteBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 use CampaignChain\CoreBundle\Entity\Location;
 use CampaignChain\CoreBundle\Job\JobCTAInterface;
 use CampaignChain\CoreBundle\Util\ParserUtil;
 
-class CTAJob implements JobCTAInterface
+class PageCTAJob implements JobCTAInterface
 {
     protected $em;
     protected $container;
