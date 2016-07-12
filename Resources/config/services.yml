@@ -1,7 +1,7 @@
 services:
     campaignchain.location.website.page.job.cta:
         class: CampaignChain\Location\WebsiteBundle\Service\PageCTAJob
-        arguments: [ '@campaignchain.core.location' ]
+        arguments: [ '@campaignchain.core.location', '@templating.helper.assets' ]
     ampaignchain.location.website.form.job.cta:
         class: CampaignChain\Location\WebsiteBundle\Service\FormCTAJob
-        arguments: [ '@campaignchain.core.location' ]
+        arguments: [ '@campaignchain.core.location', '@templating.helper.assets' ]

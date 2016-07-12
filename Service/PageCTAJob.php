@@ -14,15 +14,20 @@ use CampaignChain\CoreBundle\EntityService\LocationService;
 use CampaignChain\CoreBundle\Entity\Location;
 use CampaignChain\CoreBundle\Job\JobCTAInterface;
 use CampaignChain\CoreBundle\Util\ParserUtil;
+use Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper;
 
 class PageCTAJob implements JobCTAInterface
 {
     /** @var  LocationService */
     protected $locationService;
 
-    public function __construct(LocationService $locationService)
+    /** @var AssetsHelper */
+    protected $assetsHelper;
+
+    public function __construct(LocationService $locationService, AssetsHelper $assetsHelper)
     {
         $this->locationService = $locationService;
+        $this->assetsHelper = $assetsHelper;
     }
 
     public function execute(Location $location)
@@ -36,7 +41,7 @@ class PageCTAJob implements JobCTAInterface
 
         // Set the image.
         $location->setImage(
-            $this->container->get('templating.helper.assets')
+            $this->assetsHelper
                 ->getUrl(
                     'bundles/campaignchainlocationwebsite/images/icons/256x256/page.png',
                     null
