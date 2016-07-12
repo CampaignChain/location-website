@@ -10,20 +10,19 @@
 
 namespace CampaignChain\Location\WebsiteBundle\Service;
 
-use Doctrine\ORM\EntityManager;
+use CampaignChain\CoreBundle\EntityService\LocationService;
 use CampaignChain\CoreBundle\Entity\Location;
 use CampaignChain\CoreBundle\Job\JobCTAInterface;
 use CampaignChain\CoreBundle\Util\ParserUtil;
 
-class PageCTAJob implements JobCTAInterface
+class FormCTAJob implements JobCTAInterface
 {
-    protected $em;
-    protected $container;
+    /** @var  LocationService */
+    protected $locationService;
 
-    public function __construct(EntityManager $em, $container)
+    public function __construct(LocationService $locationService)
     {
-        $this->em = $em;
-        $this->container = $container;
+        $this->locationService = $locationService;
     }
 
     public function execute(Location $location)
@@ -32,8 +31,7 @@ class PageCTAJob implements JobCTAInterface
         $location->setName(ParserUtil::getHTMLTitle($location->getUrl()));
 
         // Set the Website page module as the Location module.
-        $locationService = $this->container->get('campaignchain.core.location');
-        $locationModule = $locationService->getLocationModule('campaignchain/location-website', 'campaignchain-website-page');
+        $locationModule = $this->locationService->getLocationModule('campaignchain/location-website', 'campaignchain-website-page');
         $location->setLocationModule($locationModule);
 
         // Set the image.
