@@ -17,3 +17,10 @@ modules:
             - campaignchain/channel-website/campaignchain-website
         services:
             job_cta: campaignchain.location.website.page.job.cta
+    campaignchain-website-form:
+        display_name: Form in Website page
+        tracking_alias: form
+        channels:
+            - campaignchain/channel-website/campaignchain-website
+        services:
+            job_cta: campaignchain.location.website.form.job.cta
