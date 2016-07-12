@@ -15,7 +15,7 @@ use CampaignChain\CoreBundle\Entity\Location;
 use CampaignChain\CoreBundle\Job\JobCTAInterface;
 use CampaignChain\CoreBundle\Util\ParserUtil;
 
-class FormCTAJob implements JobCTAInterface
+class PageCTAJob implements JobCTAInterface
 {
     /** @var  LocationService */
     protected $locationService;
