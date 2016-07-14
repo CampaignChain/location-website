@@ -8,7 +8,19 @@
 modules:
     campaignchain-website:
         display_name: Website
-        services:
-            job_cta: campaignchain.location.website.job.cta
+        channels:
+            - campaignchain/channel-website/campaignchain-website
     campaignchain-website-page:
         display_name: Website page
+        tracking_alias: a
+        channels:
+            - campaignchain/channel-website/campaignchain-website
+        services:
+            job_cta: campaignchain.location.website.page.job.cta
+    campaignchain-website-form:
+        display_name: Form in Website page
+        tracking_alias: form
+        channels:
+            - campaignchain/channel-website/campaignchain-website
+        services:
+            job_cta: campaignchain.location.website.form.job.cta

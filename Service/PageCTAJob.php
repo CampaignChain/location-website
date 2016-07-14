@@ -8,22 +8,26 @@
  * file that was distributed with this source code.
  */
 
-namespace CampaignChain\Location\WebsiteBundle\Job;
+namespace CampaignChain\Location\WebsiteBundle\Service;
 
-use Doctrine\ORM\EntityManager;
+use CampaignChain\CoreBundle\EntityService\LocationService;
 use CampaignChain\CoreBundle\Entity\Location;
 use CampaignChain\CoreBundle\Job\JobCTAInterface;
 use CampaignChain\CoreBundle\Util\ParserUtil;
+use Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper;
 
-class CTAJob implements JobCTAInterface
+class PageCTAJob implements JobCTAInterface
 {
-    protected $em;
-    protected $container;
+    /** @var  LocationService */
+    protected $locationService;
 
-    public function __construct(EntityManager $em, $container)
+    /** @var AssetsHelper */
+    protected $assetsHelper;
+
+    public function __construct(LocationService $locationService, AssetsHelper $assetsHelper)
     {
-        $this->em = $em;
-        $this->container = $container;
+        $this->locationService = $locationService;
+        $this->assetsHelper = $assetsHelper;
     }
 
     public function execute(Location $location)
@@ -32,13 +36,12 @@ class CTAJob implements JobCTAInterface
         $location->setName(ParserUtil::getHTMLTitle($location->getUrl()));
 
         // Set the Website page module as the Location module.
-        $locationService = $this->container->get('campaignchain.core.location');
-        $locationModule = $locationService->getLocationModule('campaignchain/location-website', 'campaignchain-website-page');
+        $locationModule = $this->locationService->getLocationModule('campaignchain/location-website', 'campaignchain-website-page');
         $location->setLocationModule($locationModule);
 
         // Set the image.
         $location->setImage(
-            $this->container->get('templating.helper.assets')
+            $this->assetsHelper
                 ->getUrl(
                     'bundles/campaignchainlocationwebsite/images/icons/256x256/page.png',
                     null
