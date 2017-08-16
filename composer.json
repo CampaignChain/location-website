@@ -17,7 +17,7 @@
         "docs": "http://doc.campaignchain.com"
     },
     "require": {
-        "campaignchain/channel-website": "dev-master"
+        "campaignchain/channel-website": "1.0.x-dev"
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Location\\WebsiteBundle\\": "" }
